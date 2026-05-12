@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!--
+  ============================================================
+  THERAPIST ONE-PAGE TEMPLATE
+  Modeled on the Triumph Mental Health Counseling layout.
+  ------------------------------------------------------------
+  HOW TO REUSE THIS FILE FOR A NEW THERAPIST
+  1. Search & replace the bracketed placeholders: [Practice Name], [Therapist Name],
+     [City], [State], [ZIP], the email, the phone, and the social URLs.
+  2. Edit the text in each <section> below (headlines + body copy).
+  3. Replace every .ph (placeholder) block with a real <img> tag, e.g.
+        <img src="images/your-photo.jpg" alt="Description" width="1600" height="700" loading="lazy" decoding="async" />
+     Each placeholder lists the recommended shape (wide / portrait / square).
+  4. Update the footer: address, email, phone, social links.
+  5. Recolor / re-font everything from the :root variables in the <style> below.
+  6. SEO: update the <meta> tags, the og:/twitter: tags, the canonical URL, the
+     favicon links, AND the JSON-LD structured-data block near the bottom of <head>.
+  7. Drop a favicon.ico (and a 512px icon.png) next to this file.
+  ============================================================
+-->
+
+<!-- ===== PRIMARY SEO ===== -->
+<title>Psychotherapy in [City] | [Therapist Name], [Credentials]</title>
+<meta name="description" content="[Practice Name] offers psychotherapy for adults, couples, and caregivers in [City], [State]. In-person and online therapy for anxiety, depression, trauma, life transitions, and caregiver support." />
+<meta name="author" content="[Therapist Name], [Credentials]" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#2b0a26" />
+<link rel="canonical" href="https://www.example.com/" />
+
+<!-- ===== FAVICON / APP ICONS (add these image files next to index.html) ===== -->
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="icon.png" sizes="512x512" />
+<link rel="apple-touch-icon" href="icon.png" />
+
+<!-- ===== OPEN GRAPH (Facebook / LinkedIn / iMessage previews) ===== -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="[Practice Name]" />
+<meta property="og:title" content="Psychotherapy in [City] | [Therapist Name], [Credentials]" />
+<meta property="og:description" content="In-person and online therapy in [City], [State] — anxiety, depression, trauma, life transitions, and caregiver support." />
+<meta property="og:url" content="https://www.example.com/" />
+<meta property="og:image" content="https://www.example.com/social-preview.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- ===== TWITTER / X CARD ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Psychotherapy in [City] | [Therapist Name], [Credentials]" />
+<meta name="twitter:description" content="In-person and online therapy in [City], [State]." />
+<meta name="twitter:image" content="https://www.example.com/social-preview.jpg" />
+
+<!-- ===== FONTS: a high-contrast serif for display + a quiet sans for body. Swap for any Google Fonts. ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600&display=swap" rel="stylesheet" />
+
+<style>
+/* ---------- BRAND TOKENS — change these to rebrand ---------- */
+:root{
+  --ink:        #2b0a26;   /* deep plum — display sections, dark band */
+  --plum:       #5d3a57;   /* muted plum — headings on light, links */
+  --purple:     #7E5498;   /* mid purple — used very sparingly */
+  --accent:     #c98a90;   /* dusty rose — hairline accents only (softened from the original coral) */
+  --coral:      #F47A82;   /* original brand coral — kept here in case you want it back */
+  --paper:      #fdfbf7;   /* warm off-white — page background */
+  --paper-2:    #f5efe7;   /* deeper warm neutral — alternating sections */
+  --text:       #4a3f47;   /* body text */
+  --muted:      #8a7f86;   /* small / secondary text */
+  --line:       #e3dbd3;   /* hairlines, borders */
+  --radius:     0;          /* straight edges everywhere — bump up for rounded corners */
+  --maxw:       1180px;
+  --readw:      720px;      /* narrower measure for body copy */
+  --serif:      'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:       'Source Sans 3','Source Sans Pro',-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;font-family:var(--sans);color:var(--text);background:var(--paper);
+  font-size:17px;line-height:1.8;font-weight:400;-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block;height:auto;}
+a{color:var(--plum);}
+
+/* respect users who ask for less motion */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+}
+
+/* keyboard-visible focus ring */
+:focus-visible{outline:2px solid var(--plum);outline-offset:3px;}
+
+/* visually hide but keep for screen readers */
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+
+/* skip-to-content link (appears on Tab) */
+.skip-link{
+  position:absolute;left:12px;top:-48px;z-index:200;background:var(--ink);color:#fff;
+  padding:10px 18px;text-decoration:none;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+  transition:top .2s ease;
+}
+.skip-link:focus{top:12px;}
+
+/* spam honeypot — hidden from humans, bots fill it in */
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:500;letter-spacing:.005em;margin:0 0 .45em;}
+h1{font-size:clamp(2.8rem,6vw,4.6rem);line-height:1.06;}
+h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.12;}
+h3{font-size:1.45rem;line-height:1.3;}
+p{margin:0 0 1.2em;}
+strong{font-weight:600;}
+::selection{background:var(--accent);color:#fff;}
+
+/* small uppercase label that sits above a heading */
+.eyebrow{
+  font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 1.4em;
+}
+.eyebrow::before{content:"";display:inline-block;width:26px;height:1px;background:var(--accent);vertical-align:middle;margin-right:14px;transform:translateY(-2px);}
+.center .eyebrow::after{content:"";display:inline-block;width:26px;height:1px;background:var(--accent);vertical-align:middle;margin-left:14px;transform:translateY(-2px);}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+section{padding:120px 0;border-top:1px solid var(--line);}
+section:first-of-type{border-top:0;}
+.tint{background:var(--paper-2);}
+.dark{background:var(--ink);color:#e9dde6;border-top:0;}
+.dark h1,.dark h2,.dark h3{color:#fff;}
+.dark .eyebrow{color:rgba(255,255,255,.6);}
+.dark .eyebrow::before,.dark .center .eyebrow::after{background:var(--accent);}
+.center{text-align:center;}
+.lead{font-family:var(--serif);font-size:clamp(1.35rem,2.4vw,1.7rem);line-height:1.5;font-weight:400;color:var(--plum);max-width:var(--readw);font-style:italic;}
+.dark .lead{color:rgba(255,255,255,.85);}
+.center .lead{margin-left:auto;margin-right:auto;}
+.measure{max-width:var(--readw);}
+.center .measure{margin-left:auto;margin-right:auto;}
+
+/* thin accent bar across the very top of the page */
+body::before{content:"";position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent);z-index:100;}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;padding:16px 40px;border-radius:0;font-family:var(--sans);font-weight:600;
+  text-decoration:none;font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;
+  cursor:pointer;border:1px solid transparent;transition:background .25s ease,color .25s ease,border-color .25s ease;
+}
+.btn-primary{background:var(--ink);color:#fff;border-color:var(--ink);}
+.btn-primary:hover{background:transparent;color:var(--ink);border-color:var(--ink);}
+.btn-outline{background:transparent;border-color:currentColor;color:inherit;}
+.btn-outline:hover{background:currentColor;color:var(--ink);}
+.dark .btn-primary{background:#fff;color:var(--ink);border-color:#fff;}
+.dark .btn-primary:hover{background:transparent;color:#fff;}
+.dark .btn-outline{color:#fff;}
+.dark .btn-outline:hover{color:var(--ink);}
+.hero .btn-primary{background:#fff;color:var(--ink);border-color:#fff;}
+.hero .btn-primary:hover{background:transparent;color:#fff;border-color:#fff;}
+.hero .btn-outline{color:#fff;}
+.hero .btn-outline:hover{background:#fff;color:var(--ink);}
+
+/* ---------- header / nav ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;background:rgba(253,251,247,.92);
+  backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;}
+.brand{font-family:var(--serif);font-weight:500;color:var(--ink);text-decoration:none;font-size:1.5rem;line-height:1.05;}
+.brand small{display:block;font-family:var(--sans);font-weight:600;font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+.nav-links{display:flex;gap:38px;list-style:none;margin:0;padding:0;}
+.nav-links a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;padding-bottom:3px;border-bottom:1px solid transparent;}
+.nav-links a:hover{border-bottom-color:var(--accent);}
+.nav-toggle{display:none;background:none;border:0;font-size:1.6rem;color:var(--ink);cursor:pointer;line-height:1;}
+@media (max-width:820px){
+  .nav-links{
+    display:none;position:absolute;top:84px;left:0;right:0;background:var(--paper);
+    flex-direction:column;gap:0;border-bottom:1px solid var(--line);
+  }
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:18px 28px;border-top:1px solid var(--line);border-bottom:0;}
+  .nav-toggle{display:block;}
+}
+
+/* ---------- placeholder blocks (delete when you add real images) ---------- */
+.ph{
+  background:#ece5dc;border:1px solid var(--line);border-radius:var(--radius);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  color:#a99e92;font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.26em;
+  text-transform:uppercase;padding:24px;min-height:120px;position:relative;
+}
+.ph::after{content:"";position:absolute;inset:14px;border:1px solid rgba(0,0,0,.06);}
+.ph.wide{aspect-ratio:16/7;}
+.ph.portrait{aspect-ratio:4/5;}
+.ph.square{aspect-ratio:1/1;}
+
+/* ---------- hero ---------- */
+.hero{position:relative;color:#fff;text-align:center;padding:170px 0 160px;overflow:hidden;border-top:0;}
+.hero .ph{
+  position:absolute;inset:0;border:0;border-radius:0;z-index:0;min-height:0;
+  background:linear-gradient(160deg,#2b0a26 0%,#4a2342 55%,#6f4663 100%);
+  color:rgba(255,255,255,.4);align-items:flex-end;justify-content:flex-end;padding:16px 20px;
+}
+.hero .ph::after{display:none;}
+.hero .wrap{position:relative;z-index:2;max-width:860px;}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(20,4,18,.32);z-index:1;}
+.hero h1{color:#fff;}
+.hero .lead{color:rgba(255,255,255,.92);}
+.hero .btns{margin-top:40px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+
+/* ---------- generic two-column ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.split.reverse>*:first-child{order:2;}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:40px;}.split.reverse>*:first-child{order:0;}}
+
+/* ---------- cards (services) ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px;border:1px solid var(--line);}
+@media (max-width:900px){.cards{grid-template-columns:1fr;}}
+.card{
+  background:transparent;border-right:1px solid var(--line);
+  display:flex;flex-direction:column;transition:background .25s ease;
+}
+.card:last-child{border-right:0;}
+@media (max-width:900px){.card{border-right:0;border-bottom:1px solid var(--line);}.card:last-child{border-bottom:0;}}
+.card:hover{background:rgba(255,255,255,.5);}
+.dark .card:hover{background:rgba(255,255,255,.04);}
+.card .ph{border:0;}
+.card .ph::after{inset:14px;border-color:rgba(0,0,0,.06);}
+.card .ph + .body{border-top:1px solid var(--line);}
+.card .body{padding:34px 30px 38px;}
+.card h3{margin-bottom:.5em;}
+.card p{margin-bottom:0;color:var(--text);}
+
+/* ---------- modalities ---------- */
+.modalities{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border:1px solid rgba(255,255,255,.18);}
+@media (max-width:860px){.modalities{grid-template-columns:1fr 1fr;}}
+@media (max-width:480px){.modalities{grid-template-columns:1fr;}}
+.modality{border-right:1px solid rgba(255,255,255,.18);padding:32px 24px;text-align:center;}
+.modality:last-child{border-right:0;}
+@media (max-width:860px){
+  .modality{border-right:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);}
+  .modality:nth-child(2n){border-right:0;}
+  .modality:nth-last-child(-n+2){border-bottom:0;}
+}
+@media (max-width:480px){
+  .modality{border-right:0;border-bottom:1px solid rgba(255,255,255,.18);}
+  .modality:last-child{border-bottom:0;}
+}
+.modality .abbr{font-family:var(--serif);font-style:italic;font-size:2rem;color:#fff;display:block;margin-bottom:.25em;line-height:1;}
+.modality span:not(.abbr){color:rgba(255,255,255,.7);font-size:.82rem;letter-spacing:.06em;}
+
+/* ---------- focus tags ---------- */
+.tags{display:flex;flex-wrap:wrap;gap:0;margin:44px auto;max-width:760px;border-left:1px solid var(--line);border-top:1px solid var(--line);}
+.tag{
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--plum);
+  padding:14px 0;font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  background:transparent;flex:1 1 25%;text-align:center;min-width:140px;
+}
+@media (max-width:560px){.tag{flex-basis:50%;}}
+
+/* ---------- credentials line ---------- */
+.creds{font-size:.95rem;color:var(--muted);border-top:1px solid var(--line);padding-top:18px;margin-top:10px;line-height:1.7;}
+.creds strong{font-family:var(--sans);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--plum);display:block;margin-bottom:6px;}
+
+/* ---------- contact form ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start;margin-top:64px;}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:40px;}}
+.contact-grid h3{margin-bottom:.7em;}
+.contact-grid .label{font-family:var(--sans);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--plum);display:block;margin-bottom:2px;}
+form.contact{display:grid;gap:22px;}
+form.contact label{font-family:var(--sans);font-weight:600;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--plum);display:block;margin-bottom:8px;}
+form.contact input,form.contact textarea{
+  width:100%;padding:0 0 12px;border:0;border-bottom:1px solid var(--line);border-radius:0;
+  font:inherit;font-size:1rem;background:transparent;color:var(--text);
+}
+form.contact input:focus,form.contact textarea:focus{outline:0;border-bottom-color:var(--ink);}
+form.contact textarea{min-height:120px;resize:vertical;}
+form.contact .row2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+@media (max-width:520px){form.contact .row2{grid-template-columns:1fr;}}
+form.contact .btn{justify-self:start;margin-top:6px;}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:820px;margin:56px auto 0;border-top:1px solid var(--line);}
+.faq details{border-bottom:1px solid var(--line);padding:24px 0;}
+.faq summary{
+  cursor:pointer;font-family:var(--serif);font-weight:500;color:var(--ink);font-size:1.4rem;list-style:none;
+  display:flex;justify-content:space-between;gap:24px;line-height:1.3;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-family:var(--sans);font-weight:300;font-size:1.6rem;color:var(--accent);line-height:1;transition:transform .25s ease;}
+.faq details[open] summary::after{transform:rotate(45deg);}
+.faq details p{margin:16px 0 4px;color:var(--text);max-width:680px;}
+
+/* ---------- footer ---------- */
+footer.site{background:var(--ink);color:#c9b9c6;padding:84px 0 40px;}
+footer.site a{color:#c9b9c6;text-decoration:none;border-bottom:1px solid transparent;}
+footer.site a:hover{color:#fff;border-bottom-color:var(--accent);}
+.foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
+@media (max-width:760px){.foot-grid{grid-template-columns:1fr;gap:32px;}}
+.foot-grid h4{font-family:var(--sans);color:#fff;font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;margin:0 0 16px;}
+.foot-grid p{color:#c9b9c6;line-height:1.9;}
+.foot-bottom{
+  margin-top:64px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:.78rem;letter-spacing:.06em;color:#9b8a98;
+}
+.foot-bottom nav a{margin-left:24px;text-transform:uppercase;letter-spacing:.22em;font-size:.68rem;}
+@media (max-width:760px){.foot-bottom nav a{margin:0 18px 0 0;}}
+
+</style>
+
+<!--
+  ===== STRUCTURED DATA (JSON-LD) =====
+  Helps Google show your name, address, phone, hours and rating in search / maps.
+  Update EVERY value below. Delete lines you don't have (e.g. sameAs links, priceRange).
+  Validate after editing at https://search.google.com/test/rich-results
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["MedicalBusiness", "ProfessionalService"],
+  "name": "[Practice Name]",
+  "description": "Psychotherapy for adults, couples, and caregivers in [City], [State]. In-person and online therapy.",
+  "url": "https://www.example.com/",
+  "image": "https://www.example.com/social-preview.jpg",
+  "logo": "https://www.example.com/icon.png",
+  "telephone": "+1-000-000-0000",
+  "email": "hello@example.com",
+  "priceRange": "$$",
+  "medicalSpecialty": "Psychiatric",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Street Address], Suite [#]",
+    "addressLocality": "[City]",
+    "addressRegion": "[State]",
+    "postalCode": "[ZIP]",
+    "addressCountry": "US"
+  },
+  "areaServed": { "@type": "State", "name": "[State]" },
+  "founder": {
+    "@type": "Person",
+    "name": "[Therapist Name]",
+    "honorificSuffix": "[Credentials]",
+    "jobTitle": "Licensed Mental Health Counselor"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/your-handle",
+    "https://www.facebook.com/your-page",
+    "https://www.instagram.com/your-handle"
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================= HEADER ================= -->
+<header class="site">
+  <nav class="wrap nav" aria-label="Primary">
+    <a class="brand" href="#top">
+      [Practice Name]
+      <small>Counseling &amp; Psychotherapy</small>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navlinks">&#9776;</button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<a id="top"></a>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <!-- PLACEHOLDER: full-width hero background photo (wide landscape, ~1600x700) -->
+  <div class="ph">Hero background image</div>
+  <div class="wrap">
+    <h1>Find Your Path to the Summit</h1>
+    <p class="lead">Welcome to [Practice Name], a safe and supportive space where growth, healing, and clarity begin.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="#services">Explore Services</a>
+      <a class="btn btn-outline" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHO I WORK WITH ================= -->
+<section id="approach">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Who I Work With</p>
+      <h2>Therapy that meets you where you are.</h2>
+      <p>[Therapist first name] works with individuals experiencing anxiety, depression, workplace stress and burnout, life transitions, infertility, trauma, caregiver responsibilities, relationship issues, teen concerns and substance use disorders. Whether you're feeling overwhelmed, disconnected, or carrying the emotional weight of caring for others, psychotherapy can help you reconnect with your resilience and move forward with confidence.</p>
+      <p>[Therapist Name], [Credentials], is a board-certified, licensed mental health counselor offering psychotherapy for adults, couples, and families. The goal is to help you navigate life's challenges with compassion, professionalism, and evidence-based care.</p>
+    </div>
+    <!-- PLACEHOLDER: portrait of the therapist OR a warm office/lifestyle photo (portrait, ~4:5) -->
+    <div class="ph portrait">Therapist / lifestyle photo</div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="tint">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Services</p>
+      <h2>Start your journey to wellness today.</h2>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <!-- PLACEHOLDER: service image (square or 4:3) -->
+        <div class="ph square">Service image</div>
+        <div class="body">
+          <h3>Individual Therapy</h3>
+          <p>Find clarity, resilience, and emotional balance through personalized, one-on-one sessions tailored to your unique needs.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <!-- PLACEHOLDER: service image (square or 4:3) -->
+        <div class="ph square">Service image</div>
+        <div class="body">
+          <h3>Couples Counseling</h3>
+          <p>Rebuild trust, strengthen communication, and restore emotional connection in a supportive therapeutic space.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <!-- PLACEHOLDER: service image (square or 4:3) -->
+        <div class="ph square">Service image</div>
+        <div class="body">
+          <h3>Caregiver Support</h3>
+          <p>Specialized support for caregivers navigating stress, chronic illness care, Alzheimer's/dementia caregiving, and emotional overload.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= THERAPEUTIC MODALITIES ================= -->
+<section class="dark">
+  <div class="wrap center">
+    <p class="eyebrow">Therapeutic Modalities</p>
+    <h2>Trained in evidence-based methods.</h2>
+    <div class="modalities">
+      <div class="modality"><span class="abbr">CBT</span><span>Cognitive Behavioral Therapy</span></div>
+      <div class="modality"><span class="abbr">EMDR</span><span>Eye Movement Desensitization &amp; Reprocessing</span></div>
+      <div class="modality"><span class="abbr">TF-CBT</span><span>Trauma-Focused Cognitive Behavioral Therapy</span></div>
+      <div class="modality"><span class="abbr">SFBT</span><span>Solution-Focused Brief Therapy</span></div>
+    </div>
+    <p style="margin-top:36px;">
+      <!-- CTA BUTTON — no link. Add an href (e.g. a booking link or "#contact") when ready. -->
+      <button type="button" class="btn btn-primary">Request Appointment</button>
+    </p>
+  </div>
+</section>
+
+<!-- ================= AREAS OF FOCUS ================= -->
+<section>
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Areas of Focus</p>
+      <h2>The challenges [Therapist first name] sees most often.</h2>
+      <p class="lead">[Therapist first name] works with individuals experiencing anxiety, depression, stress and burnout, trauma, infertility-related concerns, caregiver stress, substance use disorders, and challenges related to relationships and family dynamics. There is also experience supporting first responders and those navigating complex life transitions.</p>
+    </div>
+    <div class="tags" style="justify-content:center;">
+      <span class="tag">Anxiety</span>
+      <span class="tag">Trauma</span>
+      <span class="tag">Family</span>
+      <span class="tag">Depression</span>
+      <span class="tag">Stress</span>
+      <span class="tag">Caregiver stress</span>
+      <span class="tag">PTSD</span>
+      <span class="tag">Burnout</span>
+      <span class="tag">Substance use</span>
+      <span class="tag">Life transitions</span>
+      <span class="tag">Relationships</span>
+      <span class="tag">Infertility</span>
+    </div>
+    <p class="center" style="max-width:760px;margin:0 auto;">Above all, [Therapist first name] believes therapy does not need to feel intimidating or overwhelming. The goal is to make therapy a collaborative and productive process, helping clients build insight, resilience, and practical tools to create lasting and positive change.</p>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="tint">
+  <div class="wrap split reverse">
+    <!-- PLACEHOLDER: professional headshot of the therapist (portrait, ~4:5) -->
+    <div class="ph portrait">Therapist headshot</div>
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>Meet [Therapist Name]</h2>
+      <p>[Therapist first name] has practised as a Licensed Mental Health Counselor in [State] for over a decade, with experience across community mental health, private practice, and specialised caregiver and family support. [Add a personal detail — where they're from, how long in the area, etc.] Their clinical work is grounded in evidence-based practice while remaining deeply client-centered. They believe therapy should feel approachable and meaningful, offering both structure and flexibility to meet each client's individual needs.</p>
+      <p>Above all, [Therapist first name] believes therapy does not need to feel intimidating or overwhelming. The goal is to make therapy a collaborative and productive process, helping clients build insight, resilience, and practical tools to create lasting and positive change.</p>
+      <p class="creds"><strong>Credentials</strong>M.Ed. in Counseling &nbsp;·&nbsp; Licensed Mental Health Counselor ([State]) &nbsp;·&nbsp; Nationally Certified Counselor &nbsp;·&nbsp; Certified Dementia Practitioner</p>
+      <p style="margin-top:22px;">
+        <!-- CTA BUTTON — no link. Add an href (e.g. a booking link or "#contact") when ready. -->
+        <button type="button" class="btn btn-primary">Request Appointment</button>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REACH OUT / CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Reach Out Today</p>
+      <h2>Your journey to healing starts here.</h2>
+      <p class="lead">Start your journey to wellness. Send a brief message and [Therapist first name] will reply within two business days to schedule a consultation. In-person and telehealth psychotherapy available.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <h3>Get in touch</h3>
+        <p>
+          <span class="label">Visit</span>
+          [Street Address], Suite [#]<br>
+          [City], [State] [ZIP]
+        </p>
+        <p>
+          <span class="label">Email</span>
+          <a href="mailto:hello@example.com">hello@example.com</a>
+        </p>
+        <p>
+          <span class="label">Phone</span>
+          <a href="tel:+10000000000">(000) 000-0000</a>
+        </p>
+      </div>
+
+      <!--
+        NOTE: this form is styled but NOT connected yet. To make it send:
+          1. Sign up for a form service (Formspree, Basin, Web3Forms, Netlify Forms…).
+          2. Put its endpoint in `action` and remove the onsubmit="…" attribute.
+          3. Keep the hidden "company" honeypot field below — it quietly traps spam bots.
+      -->
+      <form class="contact" action="#" method="post" onsubmit="event.preventDefault();alert('Connect this form to a form service before going live.');">
+        <!-- honeypot: hidden from people; bots that fill it get rejected server-side -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="f-company">Company (leave this empty)</label>
+          <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+        <div class="row2">
+          <div>
+            <label for="f-first">First name</label>
+            <input id="f-first" name="firstName" type="text" autocomplete="given-name" required />
+          </div>
+          <div>
+            <label for="f-last">Last name</label>
+            <input id="f-last" name="lastName" type="text" autocomplete="family-name" required />
+          </div>
+        </div>
+        <div class="row2">
+          <div>
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div>
+            <label for="f-phone">Phone (optional)</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+        </div>
+        <div>
+          <label for="f-msg">How can I help?</label>
+          <textarea id="f-msg" name="message" rows="5" required></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+        <p class="visually-hidden" aria-live="polite" id="form-status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!--
+  ================= INSURANCE SECTION REMOVED =================
+  The original site had an "Insurance Plans Accepted" section here with
+  insurer logos. It has been removed per request. (The insurance-related
+  FAQ item below was kept.) To re-add it later, drop a section with a row
+  of logo placeholders right here.
+-->
+
+<!-- ================= FAQ ================= -->
+<section class="tint">
+  <div class="wrap center">
+    <p class="eyebrow">FAQ</p>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <div class="wrap faq" style="text-align:left;">
+    <details>
+      <summary>What can I expect during my first therapy session?</summary>
+      <p>Your first session is a conversation. We'll talk about what brought you to therapy, what you're hoping to work on, and any history that feels relevant. You don't need to come prepared with the right words or a clear plan. My job is to listen carefully, ask thoughtful questions, and help you feel comfortable. By the end, we'll have a sense of how to move forward together.</p>
+    </details>
+    <details>
+      <summary>How do I know if therapy is right for me?</summary>
+      <p>Most people who come to therapy aren't in crisis. They are navigating something that feels harder than it should — a relationship, a transition, a pattern they keep repeating, a weight they've been carrying alone. Therapy gives you space to make sense of it with someone trained to help. If you've been wondering whether to reach out, that wondering is usually worth a conversation.</p>
+    </details>
+    <details>
+      <summary>How do I choose the right therapist for couples counseling?</summary>
+      <p>Fit matters the most. You want someone both partners feel comfortable with, who is objective, and who has real experience working with couples, not just individuals. In a first session, pay attention to whether you both feel heard and whether the therapist can hold the room when things get difficult. If something feels off, it's okay to keep looking.</p>
+    </details>
+    <details>
+      <summary>What are the benefits of individual therapy for anxiety?</summary>
+      <p>Therapy helps you understand what's driving the anxiety, not just manage the symptoms. You learn to notice your patterns, work with your nervous system instead of against it, and build practical tools for the moments anxiety shows up. Over time, the goal isn't to eliminate anxiety — it's to feel less controlled by it and more confident in your ability to respond.</p>
+    </details>
+    <details>
+      <summary>Do you offer support for caregivers?</summary>
+      <p>Yes. Caregiver support is a specialized focus of my practice. Whether you're caring for a parent with dementia, a partner with a chronic illness, or a family member with complex needs, the emotional load is real, overwhelming, and often invisible to others. Therapy gives you a space that's about you — not the person you're caring for — so you can process what's happening, set sustainable boundaries, and protect your own wellbeing.</p>
+    </details>
+    <details>
+      <summary>Do you offer telehealth or in-person sessions?</summary>
+      <p>Both. I am located in [City]. Telehealth is available for clients across [State] who prefer the flexibility of online sessions.</p>
+    </details>
+    <details>
+      <summary>What insurance plans do you accept?</summary>
+      <p>I currently accept [list plans here, e.g. Aetna, Blue Cross Blue Shield, Optum, Evernorth, Cigna, Medicare, and UnitedHealthcare]. Private pay is available for those who prefer not to use insurance. If you don't see your plan listed, reach out — I can help you understand your options.</p>
+    </details>
+    <details>
+      <summary>How do I schedule a first appointment?</summary>
+      <p>Send a brief message through the contact form above. I'll reply within two business days to schedule a 15-minute consultation. The consultation is a chance to hear about your situation, answer your questions, and decide together whether to book a first full session.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Visit</h4>
+        <p>[Street Address], Suite [#]<br>[City], [State] [ZIP]</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="mailto:hello@example.com">hello@example.com</a><br><a href="tel:+10000000000">(000) 000-0000</a></p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <p>
+          <a href="#" rel="noopener">LinkedIn</a><br>
+          <a href="#" rel="noopener">Facebook</a><br>
+          <a href="#" rel="noopener">Instagram</a>
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> [Practice Name]. All rights reserved.</span>
+      <nav aria-label="Footer">
+        <a href="#top">Home</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // current year in the footer
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // accessible mobile menu toggle
+  (function () {
+    var btn = document.querySelector('.nav-toggle');
+    var menu = document.getElementById('navlinks');
+    if (!btn || !menu) return;
+    function setOpen(open) {
+      menu.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', function () {
+      setOpen(btn.getAttribute('aria-expanded') !== 'true');
+    });
+    // close after tapping a link
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+    // close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
+</script>
+</body>
+</html>
